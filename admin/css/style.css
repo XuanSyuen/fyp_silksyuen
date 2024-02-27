@@ -2763,7 +2763,7 @@ fieldset:disabled a.btn {
 
 .btn-brown.disabled, .btn-brown:disabled {
   color: #fff;
-  background-color: #18140f
+  background-color: #18140f;
   border-color: #18140f;
 }
 
