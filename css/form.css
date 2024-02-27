@@ -1,0 +1,428 @@
+
+.container {
+    max-width: 100%;
+    margin: auto;
+}
+
+
+@media only screen and (min-width: 760px) and (max-width: 959px){
+    .container {
+        max-width: 720px;
+    }
+}
+
+@media only screen and (min-width: 960px) and (max-width: 1199px){
+    .container {
+        max-width: 960px;
+    }
+}
+
+@media only screen and (min-width: 1200px){
+    .container {
+        max-width: 1170px;
+    }
+}
+.checkout-section {
+    position: relative;
+    padding: 120px 0;
+}
+.checkout-box{
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    padding: 0 20px;
+}
+
+.checkout-box .left, .checkout-box .right{
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+
+@media only screen and (max-width: 1249px){
+    .checkout-box .left, .checkout-box .right{
+       -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .checkout-review-order{
+        margin-left: 0px !important;
+        margin-top: 40px;
+    }
+}
+
+.customer-login, .customer-coupon {
+    font-size: 15px;
+    color: #7d7d7d;
+    font-weight: 600;
+    line-height: 26px;
+    margin: 0 0 13px;
+}
+.customer-login a, .customer-coupon a {
+    color: #010101; 
+    text-decoration: none;
+    padding-left: 8px;
+}
+
+/*billing*/
+.billing-fields {
+    position: relative;
+    margin: 30px 0 0;
+}
+.billing-fields h3 {
+    font-size: 24px;
+    line-height: 48px;
+    margin-bottom: 20px;
+}
+
+.row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.colFull {
+   width: 100%;
+}
+
+.colHalf {
+    width: calc(100% /2 - 10px);
+}
+
+.billing-fields label {
+    font-size: 14px;
+    line-height: .8;
+    color: #a1a1a1;
+    font-weight: 700;
+    text-transform: uppercase;
+    display: block;
+    margin: 0 0 15px;
+}
+.billing-citys, .billing-countries {
+    position: relative;
+}
+.billing-citys select, .billing-countries select {
+    width: 100%;
+    height: 45px;
+    background: #f6f7fb;
+    margin: 0 0 31px;
+    padding: 0 20px;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    line-height: 45px;
+    color: #7d7d7d;
+    cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    word-wrap: normal;
+    text-transform: none;
+}
+.billing-citys:after, .billing-countries:after {
+    position: absolute;
+    right: 20px;
+    bottom: 32px;
+    content: "\f0d7";
+    font-family: 'fontawesome';
+    font-size: 20px;
+    line-height: 45px;
+    color: #cccccc;
+}
+.billing-fields input {
+    width: -webkit-fill-available;
+    height: 45px;
+    background: #f6f7fb;
+    padding: 0 20px;
+    font-size: 14px;
+    line-height: 45px;
+    color: #7d7d7d;
+    border: none;
+    outline: none;
+    margin: 0 0 15px;
+}
+
+/*right form*/
+
+.checkout-review-order {
+    position: relative;
+    margin-left: 60px;
+    padding: 40px 50px 58px;
+    background: #f9fafe;
+}
+
+.checkout-review-order h3 {
+    font-size: 24px;
+    line-height: 48px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #e1e1e1;
+    text-align: center;
+}
+
+.check-table {
+    position: relative;
+    width: 100%;
+    border: none;
+    margin: 19px 0 0;
+    padding: 0;
+    border-collapse: collapse;
+}
+.check-table thead tr th {
+    font-size: 16px;
+    line-height: 28px;
+    color: #363636;
+    font-weight: 700;
+    text-align: left;
+}
+.check-table tbody tr td {
+    font-size: 15px;
+    line-height: 30px;
+    color: #7d7d7d;
+    font-weight: 600;
+}
+.check-table tbody tr td.product-total {
+    text-align: right;
+}
+.product-price .price {
+    display: inline-block;
+    color: inherit;
+}
+.clearfix::after {
+    display: block;
+    clear: both;
+    content: "";
+}
+.check-table tfoot tr {
+    border-top: 1px solid #e1e1e1;
+}
+.check-table tfoot tr th {
+    font-size: 18px;
+    line-height: 28px;
+    color: #363636;
+    font-weight: 700;
+    padding: 15px 0;
+    text-align: left;
+}
+
+.check-table tfoot tr td, .check-table tfoot tr td .product-price {
+    font-size: 16px;
+    line-height: 30px;
+    color: #7d7d7d;
+    font-weight: 600;
+    letter-spacing: 0;
+    text-align: right;
+}
+
+.check-table tfoot tr.order-total th {
+    padding-top: 44px;
+}
+
+.check-table tfoot tr.order-total td .product-price {
+    font-size: 20px;
+    color: #3160d8;
+    padding-top: 44px;
+    padding-bottom: 15px;
+}
+
+.account {
+    position: relative;
+    margin: -3px 0 25px;
+}
+
+
+
+.account input[type="checkbox"] {
+    display: none;
+}
+
+.account label {
+    cursor: pointer;
+    position: relative;
+    -moz-user-select: none;
+    -o-user-select: none;
+    -webkit-user-select: none;
+    font-size: 15px;
+    text-transform: none;
+    line-height: 26px;
+    font-weight: 400;
+    color: #000000;
+    font-weight: 400;
+    margin: 0;
+    padding-left: 32px;
+    display: block;
+}
+.account label::before {
+    background: transparent;
+    border: 1px solid #b7b7b7;
+    content: "";
+    height: 15px;
+    width: 15px;
+    left: 0;
+    position: absolute;
+    top: 5px;
+    border-radius: 50%;
+}
+
+.account input[type="checkbox"]:checked + label::after {
+    background: #3160d8;
+    bottom: 0;
+    content: "";
+    height: 9px;
+    left: 4px;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    width: 9px;
+    border-radius: 50%;
+}
+
+.billing-fields textarea {
+    width: -webkit-fill-available;
+    height: 200px;
+    background: #f6f7fb;
+    padding: 12px 20px 0;
+    font-size: 14px;
+    line-height: 28px;
+    color: #7d7d7d;
+    border: none;
+    outline: none;
+    resize: none;
+    margin: 0 0 15px;
+    overflow: auto;
+}
+
+/*checkout option*/
+.checkout-payment {
+    position: relative;
+    margin: 47px 0 55px;
+}
+.checkout-payment ul {
+    margin: 0;
+    padding: 0;
+}
+.checkout-payment ul li {
+    list-style: none;
+    margin: 0 0 14px;
+    padding: 0;
+}
+
+.checkout-payment ul li input[type=radio] {
+    display: none;
+}
+.checkout-payment ul li label {
+    cursor: pointer;
+    position: relative;
+    -moz-user-select: none;
+    -o-user-select: none;
+    -webkit-user-select: none;
+    font-size: 15px;
+    text-transform: none;
+    line-height: 26px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    color: #000000;
+    margin: 0 0 5px;
+    padding-left: 30px;
+    display: inline-block;
+}
+.checkout-payment ul li label::before {
+    background: transparent;
+    border: 1px solid #b7b7b7;
+    content: "";
+    height: 15px;
+    width: 15px;
+    left: 0;
+    position: absolute;
+    top: 5px;
+    border-radius: 50%;
+    background: #ffffff;
+}
+.checkout-payment ul li input[type="radio"]:checked + label::after {
+    background: #3160d8;
+    bottom: 0;
+    content: "";
+    height: 9px;
+    left: 4px;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    width: 9px;
+    border-radius: 50%;
+}
+
+.payment_box.visibales {
+    display: block;
+}
+.payment_box {
+    margin: 0 0 18px;
+    position: relative;
+    padding-left: 30px;
+    display: none;
+}
+
+.payment_box p {
+    font-size: 15px;
+    line-height: 25px;
+    color: #7d7d7d;
+    margin-bottom: 0;
+}
+
+.place-order {
+    position: relative;
+}
+
+.place-order button, .place-order .button {
+    height: 45px;
+    border: none;
+    text-align: center;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 45px;
+    padding: 0 15px;
+    letter-spacing: .28px;
+    width: 100%;
+    text-transform: uppercase;
+    background: #000;
+    color: #fff;
+    -webkit-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+    cursor: pointer;
+}
+.place-order button:hover, .place-order .button:hover {
+    background: #3160d8;
+}
+
+.auth-btn {
+    position: relative;
+}
+
+.auth-btn button, .auth-btn .button {
+    height: 45px;
+    border: none;
+    text-align: center;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 45px;
+    padding: 0 15px;
+    letter-spacing: .28px;
+    width: 100%;
+    margin-top: 15px;
+    text-transform: uppercase;
+    background: #000;
+    color: #fff;
+    -webkit-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+    cursor: pointer;
+}
+.auth-btn button:hover, .auth-btn .button:hover {
+    background: #3160d8;
+}
