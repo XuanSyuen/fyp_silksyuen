@@ -54,10 +54,10 @@
 
             if (isset($_GET['keyword'])) {
                 $keyword = $_GET['keyword'];
-                $sql = "SELECT * from product WHERE product_name LIKE '%$keyword%'";
+                $sql = "SELECT * from product WHERE product_name LIKE '%$keyword%' AND product_status = 1";
             } else {
                 $keyword = "";
-                $sql = "SELECT * from product ";
+                $sql = "SELECT * from product WHERE product_status = 1";
             }
 
             ?>

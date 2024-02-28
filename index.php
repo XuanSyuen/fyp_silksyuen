@@ -140,7 +140,7 @@
 
 				<?php
 
-				$sql = "SELECT * from product ORDER BY product_id DESC LIMIT 4 ";
+				$sql = "SELECT * from product WHERE product_status = 1 ORDER BY product_id DESC LIMIT 4 ";
 				$result = $conn->query($sql);
 
 				if ($result->num_rows > 0) {
