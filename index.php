@@ -20,7 +20,7 @@
 	<link rel="stylesheet" href="css/common.css" />
 	<link rel="stylesheet" href="css/home.css" />
 
-	<title>Z STYLE</title>
+	<title>SilkSyuen</title>
 
 </head>
 
@@ -43,10 +43,10 @@
 				<div class="slider-box">
 
 					<div class="left">
-						<h1 class="title">Enhance Life with Elegance</h1>
+						<h1 class="title">Chic Trends for Modern Women</h1>
 						<p class="subtitle">
-							Experience the essence of modern living with our premium selection of stylish electronics -
-							a delightful fusion of function and fashion.
+						Explore high-quality, unique designs that capture the essence of modern style. 
+						Elevate your wardrobe with our trendy collection curated for women aged 18 to 35.
 						</p>
 						<a class="btnview" href="products.php">
 							View Products
@@ -73,10 +73,10 @@
 				<div class="slider-box">
 
 					<div class="left">
-						<h1 class="title">Unleash the Power of Apples!</h1>
+						<h1 class="title">Discover Your Style Oasis</h1>
 						<p class="subtitle">
-							Embrace the seamless elegance and cutting-edge technology with our exceptional range of
-							Apple products
+						Unleash your fashion flair with our high-quality, trendy designs tailored for modern women aged 18 to 35. 
+						Elevate your wardrobe effortlessly.
 						</p>
 						<a class="btnview" href="products.php">
 							View Products
@@ -106,21 +106,24 @@
 				<div class="single-service">
 					<img src="images/truck.png" alt="">
 					<h4>100% Free Shipping</h4>
-					<p>We ship all our products for free as long as you buying within the USA.</p>
+					<p>Experience the convenience of free delivery on all your fashion finds. 
+						Elevate your shopping journey without worrying about additional costs – your style, delivered to your doorstep, always on us.</p>
 				</div>
 			</div>
 			<div class="item">
 				<div class="single-service">
 					<img src="images/headphone.png" alt="">
 					<h4>24/7 Support</h4>
-					<p>Our support team is extremely active, you will get response within 2 minutes.</p>
+					<p>We've got your back day and night! Our dedicated customer support team is here 24/7 to assist you. 
+						Any queries, concerns, or style advice you need – we're just a message or call away.</p>
 				</div>
 			</div>
 			<div class="item">
 				<div class="single-service">
 					<img src="images/undo.png" alt="">
 					<h4>30 Day Return</h4>
-					<p>Our 30 day return program is open from customers, just fill up a simple form.</p>
+					<p>Shop with confidence knowing you have 30 days to make sure you love your choices. If it's not a perfect fit, return it hassle-free. 
+						Your satisfaction is our commitment to a worry-free shopping experience.</p>
 				</div>
 			</div>
 		</div>

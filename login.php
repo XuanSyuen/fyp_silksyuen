@@ -71,7 +71,7 @@
                         </div>
                     </div>
                     <div class="right">
-                        <img src="images/ico-2.jpg" style="width: 100%;" />
+                        <img src="images/ico-6.jpg" style="width: 100%;" />
                     </div>
                 </div>
             </div>

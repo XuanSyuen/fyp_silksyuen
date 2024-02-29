@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Z Style</title>
+    <title>SilkSyuen</title>
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
@@ -71,15 +71,12 @@
                             
                                     <?php if(isset($_SESSION['msg']) && !empty($_SESSION['msg']) ){ ?>
 
-
-
                                         <div class="alert alert-<?php echo $_SESSION['msg_status'] ?> alert-dismissible fade show" role="alert">
                                           <strong class="display-7"><?php echo $_SESSION['msg'] ?></strong>
                                           <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                             <span aria-hidden="true">&times;</span>
                                           </button>
                                         </div>
-
 
                                     <?php $_SESSION['msg'] = ''; $_SESSION['msg_status'] = ''; } ?>
 
@@ -95,9 +92,7 @@
                                             <input type="password" class="form-control form-control-sm  form-control-user rounded" id="password" name="password" required>
                                         </div>
 
-                                        
                                         <input type="submit" value="LOGIN" name="login" class="btn btn-black btn-user btn-block mt-4 mb-2 rounded">
-
 
                                         <a href="../index.php" class="btn btn-dark btn-user btn-block rounded">
                                             BACK

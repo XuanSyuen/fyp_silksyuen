@@ -20,7 +20,7 @@
             </ul>
         </div>
         <div class="right">
-            <div class="copys-text"><i class="fa-regular fa-copyright"></i> Copyright Z STYLE CLOTHING 2023 | All Rights Reserved</div>
+            <div class="copys-text"><i class="fa-regular fa-copyright"></i> Copyright SilkSyuen 2024 | All Rights Reserved</div>
         </div>
     </div>
 </section>

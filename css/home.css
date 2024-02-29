@@ -169,8 +169,6 @@ img {vertical-align: middle;}
     animation-delay: .1s;
 }
 
-
-
 .slider-box .left .subtitle{
     color: rgb(102, 102, 102);
     font-weight: 500;
@@ -566,6 +564,8 @@ img {vertical-align: middle;}
     border-top-right-radius: 4px;
     height: 250px;
 /*  height: 180px;*/
+    object-fit: cover;
+    object-position: top center;
 }
 
 .prod-box .single p{
@@ -780,4 +780,3 @@ img {vertical-align: middle;}
 .max300{
     max-width: 320px;
 }
-

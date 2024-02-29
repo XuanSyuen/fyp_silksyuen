@@ -58,7 +58,7 @@
                                         </div>
                                         <div class="colHalf">
                                             <label>Contact No</label>
-                                            <input placeholder="" name="mobile" type="number" required>
+                                            <input placeholder="" name="mobile" type="text" required>
                                         </div>
                             
                                         <div class="colFull">
@@ -75,7 +75,7 @@
                         </div>
                     </div>
                     <div class="right">
-                        <img src="images/ico-2.jpg" style="width: 100%;" />
+                        <img src="images/ico-8.jpg" style="width: 100%;" />
                     </div>
                 </div>
             </div>

@@ -21,6 +21,12 @@
     <link rel="stylesheet" href="css/product.css" />
 
     <title>Products</title>
+    <style type="text/css">
+        .flexbox{
+            display: flex;
+            flex-flow: row wrap;
+        }
+    </style>
 
 
 </head>
@@ -94,14 +100,24 @@
 
             </div>
 
+            <?php 
 
-            <div class="prod-box">
+                $result = $conn->query($sql);
+                if($result->num_rows == 2 || $result->num_rows == 3){
+                    $flexbox = 'flexbox';
+                }else{
+                    $flexbox = '';
+                }
+
+            ?>
+
+            <div class="prod-box <?php echo $flexbox; ?>">
 
                 <?php
 
 
 
-                $result = $conn->query($sql);
+                
 
                 if ($result->num_rows > 0) {
 

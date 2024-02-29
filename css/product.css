@@ -118,8 +118,6 @@
     }
 }
 
-
-
 .title-box{
     padding: 0px 6%;
 }
@@ -228,7 +226,6 @@
     padding: 20px 0 0px 0;
     font-weight: 600;
 }
-
 
 .popular-section{
     background: #ffffff;
@@ -354,8 +351,8 @@
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
     height: 250px;
-    object-fit: fill;
-    object-position: center center;
+    object-fit: cover;
+    object-position: top center;
 }
 
 .prod-box .single p{
@@ -368,7 +365,6 @@
     overflow: hidden;
     text-overflow: ellipsis;
 }
-
 
 .prod-box .single .action{
     display: flex;
@@ -566,8 +562,6 @@
     border-radius: 0;
 }
 
-
-
 .quantityd button.qtyBtn {
     background: transparent;
     height: 100%;
@@ -611,4 +605,3 @@
     left: auto;
     right: 3px;
 }
-
