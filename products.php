@@ -112,13 +112,7 @@
             ?>
 
             <div class="prod-box <?php echo $flexbox; ?>">
-
                 <?php
-
-
-
-                
-
                 if ($result->num_rows > 0) {
 
                     while ($row = $result->fetch_assoc()) {
@@ -134,8 +128,6 @@
                                     <p>RM ' . number_format($row["product_price"], 2) . '</p>
                                     
                                     <div class="action flexcol">';
-
-
 
                         if (empty($cid)) {
 
@@ -155,27 +147,19 @@
                                     </a>';
                         }
 
-
                         echo '</div>
                                 </div>';
-
 
                     }
                 } else {
                     echo "<div>No Product Yet</div>";
                 }
-
                 ?>
-
-
-
             </div>
-
 
             <div class="cate-left">
                 <img src="images/shape.png" alt="">
             </div>
-
 
             <div class="cate-shage">
                 <img src="images/shape1.png" alt="">
