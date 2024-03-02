@@ -10,8 +10,6 @@ $conn = mysqli_connect($sname, $uname, $password, $db_name);
 if (!$conn) {
 	echo "Connection failed!";
 }
-
-
 // function to echo/check output
 // function p($x, $b = false) {
 //     echo '<pre>';
