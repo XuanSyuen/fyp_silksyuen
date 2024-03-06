@@ -72,7 +72,7 @@
                     <div class="card">
                         <div class="card-header">
                             <div class="d-flex align-items-center justify-content-between">
-                                <h1 class="h3 mb-0 text-gray-800 display-7">Order List</h1>
+                                <h1 class="h3 mb-0 text-gray-800 display-7">Message</h1>
                             </div>
                         </div>
                         <div class="card-body" style="overflow: auto;">
