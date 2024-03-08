@@ -60,7 +60,7 @@
                                     </div>
 
                                     <div class="colHalf">
-                                        <label>Mobile</label>
+                                        <label>Contact</label>
                                         <input placeholder="" name="mobile" type="text" required>
                                     </div>
 
