@@ -1,6 +1,6 @@
 <?php
 	session_start();
-	if(!isset($_SESSION['customerid']) && empty($_SESSION['customerid'])){
+	if(!isset($_SESSION['customerid']) || empty($_SESSION['customerid'])){
 		$cid = '';
 	}else{
 		$cid = $_SESSION['customerid'];
@@ -8,6 +8,15 @@
 
 	include 'dbcon.php';
 
+	$user_email = '';
+	if(!empty($cid)) {
+		$query = "SELECT user_email FROM user WHERE user_id = '$cid'";
+		$result = mysqli_query($conn, $query);
+		if(mysqli_num_rows($result) == 1) {
+			$row = mysqli_fetch_assoc($result);
+			$user_email = $row['user_email'];
+		}
+	}
 ?>
 
 <button onclick="topFunction()" id="scrollBtn" title="Go to top">
@@ -48,7 +57,7 @@
 		<?php }else{ ?>
 		<a href="account.php">
 			<i class="fa-solid fa-circle-user"></i>
-			<span>Account</span>
+			<span><?php echo $user_email != '' ? $user_email : 'Account'; ?></span>
 		</a>
 		<?php } ?>
 		<a href="#" class="hide">

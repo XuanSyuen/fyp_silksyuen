@@ -63,7 +63,7 @@
                             
                                         <div class="colFull">
                                             <label>Password</label>
-                                            <input placeholder="" name="password" type="password" required>
+                                            <input placeholder="" name="password" type="password" pattern="^(?=.*[A-Za-z])(?=.*\d).{8,}$" title="Password must be at least 8 characters long and include both letters and numbers." required>
                                         </div>
 
                                         <div class="auth-btn">
