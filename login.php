@@ -77,7 +77,6 @@
             </div>
         </section>
 
-
         <?php include 'component/footer.php'; ?>
          <script>
             $('.rightmenu a[href="login.php"]').addClass('active');

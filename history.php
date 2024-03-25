@@ -192,10 +192,6 @@
                                                                                             </div>
 
                                                                                          </div>';
-
-                                                                                  
-
-
                                                                             }
 
                                                         echo '    </div>
@@ -208,12 +204,7 @@
                                                 echo "<tr><td colspan='6'>No Order Yet</td></tr>";
 
                                             }
-
-
-
                                         ?>
-                                        
-                                      
                                     </tbody>
                                 </table>
                             </div>
@@ -259,7 +250,6 @@
             </div>
         </section>
 
-
         <?php include 'component/footer.php'; ?>
         <script type="text/javascript">
             $('.rating-btn').on('click', function(){
@@ -293,7 +283,6 @@
                 $('.star-rating i').filter('[data-value="' + Math.floor(value) + '"]').prevAll().addBack().css('color', '#FFD700');
             }
 
-
             function updateStarRating() {
               const rating = parseFloat($('.star-rating').attr('data-rating'));
               highlightStars(rating);
@@ -301,8 +290,5 @@
             }
             $('.navmenu a[href="history.php"]').addClass('active');
         </script>
-        
-     
-
     </body>
 </html>

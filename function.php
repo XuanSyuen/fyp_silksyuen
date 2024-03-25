@@ -9,7 +9,6 @@
 	include 'dbcon.php';
 	session_start();
 
-
 	// new function
 	// user
 	if(isset($_POST['register'])){
@@ -34,8 +33,6 @@
 
 	    }else{
 
-	        
-
 	            $sql = "INSERT INTO user (user_email, user_password, user_name, user_contact, user_created) VALUES ('$email', '$password', '$name', '$mobile','$current')";
 
 	            $query_run = mysqli_query($conn, $sql);
@@ -56,9 +53,6 @@
 					</script>';
 
 		      	}
-
-	        
-
 	    }
 
     }
@@ -71,8 +65,6 @@
 	    $result = mysqli_query($conn, $sql);
 			
 			if(mysqli_num_rows($result) > 0){
-
-			
 					$row = mysqli_fetch_assoc($result);
 
 					$pwDb = $row['user_password'];
@@ -99,13 +91,10 @@
 
 			}else{
 
-
 				echo '<script>
 					  alert("Invalid Credential");
 					  window.location.href = "login.php";
 					</script>';
-
-
 			}
 		  
 	}
@@ -206,11 +195,7 @@
 		        $msg = "Failed to add cart";
 		  		returnErr($msg);
 		  	}
-
-
 		}              
-
-     
     }
 
     if(isset($_POST['checkCart'])){
@@ -240,11 +225,7 @@
 			));
 
 			exit();
-
-
 		}              
-
-     
     }
 
     if(isset($_POST['preorder'])){
@@ -364,7 +345,6 @@
         
     }
 
-
     if(isset($_POST['contact'])){
 
         $name = $_POST['name'];
@@ -372,11 +352,9 @@
         $mobile = $_POST['mobile'];
         $subject = mysqli_real_escape_string($conn, $_POST['subject']);
         $message = mysqli_real_escape_string($conn, $_POST['message']);
-
     
         date_default_timezone_set("Asia/Kuala_Lumpur");
         $current = date('Y-m-d H:i:s'); 
-
   
         $sql = "INSERT INTO contact (subject, name, email, mobile ,message, created_at) VALUES ('$subject', '$name', '$email', '$mobile', '$message','$current')";
 
@@ -396,13 +374,10 @@
 			  window.location.href = "contact.php";
 			</script>';
 
-      	}
-
-	        
+      	}     
     }
 
     if(isset($_POST['forgot'])){
-
 
     	$email = $_POST['email'];
 
@@ -516,14 +491,12 @@
 	    return $password;
 	}
 
-
 	function returnMsg($msgR, $statusR){
 
 	   	$_SESSION['msg'] = $msgR;
 	    $_SESSION['msg_status'] = $statusR;
 	   
 	}
-
 
 	function returnMsgE($msgE, $statusE){
 
@@ -539,7 +512,6 @@
 	   
 	}
 
-
 	function returnSuccess($msg){
 
 	  echo json_encode(array(
@@ -550,7 +522,6 @@
 	  exit();
 
 	}
-
 
 	function returnErr($msg){
 
@@ -563,10 +534,4 @@
 	  exit();
 
 	}
-
-
-
-
-
-
 ?>

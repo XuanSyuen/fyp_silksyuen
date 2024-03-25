@@ -16,24 +16,19 @@
         <title>My Account</title>
 
     </head>
-    <body>  
-        
+    <body>   
         <?php include 'component/topbar.php'; ?>
 
         <section class="page-header">
-
             <div class="box">
-
                 <div class="title-row">
                     <span class="round-shape"></span>
                     <h2 class="banner-title">My Account</h2>
                 </div>
                 <div class="bread-crumb">
                     <a href="index.php">Home</a> / Account Profile
-                </div>
-                
-            </div>
-            
+                </div>     
+            </div>  
         </section>
 
         <section class="checkout-section">
@@ -62,7 +57,7 @@
                                             <input placeholder="" name="email" type="email" value="<?php echo $rowE['user_email']; ?>" disabled>
                                         </div>
                                         <div class="colHalf">
-                                            <label>Contact No*</label>
+                                            <label>Phone No</label>
                                             <input placeholder="" name="mobile" type="number" value="<?php echo $rowE['user_contact']; ?>" required>
                                         </div>
                             
@@ -74,7 +69,6 @@
                                         <div class="auth-btn">
                                             <button type="submit" class="button" name="update-user">Update</button>
                                         </div>
-                                   
                                 </div>
                             </form>
                         </div>
@@ -86,12 +80,10 @@
             </div>
         </section>
 
-
         <?php include 'component/footer.php'; ?>
         
         <script>
             $('.rightmenu a[href="account.php"]').addClass('active');
         </script>
-
     </body>
 </html>

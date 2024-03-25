@@ -13,17 +13,27 @@
 
 <section class="copyright-section">
 	<div class="copyrightbox">
-		<div class="left">
-           	<ul class="menu-link">
-               <li><a href="admin/index.php">Admin Login</a></li> 
+		<!-- <div class="left"> -->
+           	<!-- <ul class="menu-link"> -->
+               <!-- <li><a href="admin/index.php">Admin Login</a></li>  -->
                <!-- <li><a href="#">Terms of Service</a></li> -->
-            </ul>
-        </div>
+            <!-- </ul> -->
+        <!-- </div> -->
+
+        <div id="google_translate_element"></div>
+
         <div class="right">
             <div class="copys-text"><i class="fa-regular fa-copyright"></i> Copyright SilkSyuen 2024 | All Rights Reserved</div>
         </div>
     </div>
 </section>
+
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+}
+</script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 <script src="js/jquery.js"></script>
 <script src="js/common.js"></script>

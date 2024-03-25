@@ -20,7 +20,6 @@
         <?php include 'component/topbar.php'; ?>
 
         <?php 
-
             $sql = "SELECT * FROM cart INNER JOIN product ON cart.product_id = product.product_id where user_id = '$cid'";
             $result = mysqli_query($conn, $sql);
             $carttotal = mysqli_num_rows($result);
@@ -29,23 +28,18 @@
                 echo "<script>alert('Add item to cart first.');</script>";
                 echo "<script>window.location.href='shop.php';</script>"; 
             }
-
         ?>
 
         <section class="page-header">
-
             <div class="box">
-
                 <div class="title-row">
                     <span class="round-shape"></span>
                     <h2 class="banner-title">Checkout</h2>
                 </div>
                 <div class="bread-crumb">
                     <a href="index.html">Home</a> / Checkout
-                </div>
-                
-            </div>
-            
+                </div>   
+            </div> 
         </section>
 
         <section class="checkout-section">
@@ -56,10 +50,7 @@
                             <div class="billing-fields">
                                 <h3>Billing Info</h3>
                                 <div class="row">
-
                                     <input type="hidden" name="uid" value="<?php echo $cid; ?>">
-                                   
-                    
                                     <div class="colFull">
                                         <label>Address 1*</label>
                                         <input name="address1" type="text"  required>
@@ -88,8 +79,7 @@
                                     <div class="colFull">
                                         <label>Order Note</label>
                                         <textarea name="remark" placeholder=""></textarea>
-                                    </div>
-                                    
+                                    </div>   
                                 </div>
                             </div>
                         </div>
@@ -104,7 +94,6 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-
                                         <?php 
                                             $finalTotal = 0;
                                             while($row = mysqli_fetch_assoc($result)) { 
@@ -128,8 +117,7 @@
                                                 </div>
                                             </td>
                                         </tr>
-                                        <?php } ?>
-                                        
+                                        <?php } ?>  
                                     </tbody>
                                     <tfoot>
                                         <tr class="cart-subtotal">
@@ -164,33 +152,27 @@
                                         </tr>
                                     </tfoot>
                                 </table>
-                                <div class="checkout-payment hide" id="payment">
+                                <div class="checkout-payment" id="payment">
                                     <ul class="wc_payment_methods payment_methods methods">
                                         <li class="wc_payment_method payment_method_bacs">
                                             <input checked="checked"  name="payment_method" class="input-radio" id="payment_method_bacs" type="radio" value="transfer" class="optionPay" onclick="changeView()">
-                                            <label for="payment_method_bacs">Direct bank transfer</label>
+                                            <label for="payment_method_bacs">Bank Transfer</label>
                                             <div class="payment_box payment_method_bacs visibales" id="transfer-desc">
-                                                <p>
-                                                    Aenean id ullamcorper libero. Vestibulum impnibh. Lorem  ullamcorper volutpat. Vestibulum lacinia risus. Etiam sagittis ullamcorper volutpat.
-                                                </p>
+                                                <p>Simplify your payment process with secure online bank transfers</p>
                                             </div>
                                         </li>
                                         <li class="wc_payment_method payment_method_cod">
                                             <input  name="payment_method" class="input-radio" id="payment_method_cod" type="radio" value="cheque" class="optionPay" onclick="changeView()">
-                                            <label for="payment_method_cod">Cheque Payment</label>
+                                            <label for="payment_method_cod">Cash On Delivery</label>
                                             <div class="payment_box payment_method_cod" id="cod-desc">
-                                                <p>
-                                                    Exam id ullamcorper libero. Vestibulum impnibh. Lorem  ullamcorper volutpat. Vestibulum lacinia risus. Etiam sagittis ullamcorper volutpat.
-                                                </p>
+                                                <p>Choose cash on delivery for effortless payment upon receipt of your order</p>
                                             </div>
                                         </li>
                                         <li class="wc_payment_method payment_method_paypal">
                                             <input  name="payment_method" class="input-radio" id="payment_method_paypal" type="radio" value="paypal" class="optionPay" onclick="changeView()">
-                                            <label for="payment_method_paypal">PayPal <i class="twi-cc-mastercard"></i><i class="twi-cc-visa"></i><i class="twi-cc-paypal"></i><i class="twi-cc-discover"></i></label>
+                                            <label for="payment_method_paypal">Touch 'n Go eWallet<i class="twi-cc-mastercard"></i><i class="twi-cc-visa"></i><i class="twi-cc-paypal"></i><i class="twi-cc-discover"></i></label>
                                             <div class="payment_box payment_method_paypal" id="paypal-desc">
-                                                <p>
-                                                    Vestibulum impnibh. Lorem  ullamcorper volutpat. Vestibulum lacinia risus. Etiam sagittis ullamcorper volutpat.
-                                                </p>
+                                                <p>Complete your purchase swiftly and securely with our convenient eWallet payment option</p>
                                             </div>
                                         </li>
                                     </ul>
@@ -205,19 +187,16 @@
                 </div>
             </form>
         </section>
-
-
+        
         <?php include 'component/footer.php'; ?>
         <script type="text/javascript">
             
-
             var input = document.getElementsByClassName("optionPay");
             var option1 = document.querySelector('#transfer-desc');
             var option2 = document.querySelector('#cod-desc');
             var option3 = document.querySelector('#paypal-desc');
 
             function changeView(){
-
 
                 var value = document.querySelector('input[name="payment_method"]:checked').value;
                 option1.classList.remove('visibales');
@@ -231,11 +210,7 @@
                 }else if(value == 'paypal'){
                     option3.classList.add('visibales');
                 }
-
             }
-        
-
         </script>
-
     </body>
 </html>

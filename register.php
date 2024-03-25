@@ -57,7 +57,7 @@
                                             <input placeholder="" name="email" type="email" required>
                                         </div>
                                         <div class="colHalf">
-                                            <label>Contact No</label>
+                                            <label>Phone No</label>
                                             <input placeholder="" name="mobile" type="text" required>
                                         </div>
                             

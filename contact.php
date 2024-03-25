@@ -41,7 +41,7 @@
                 <div class="checkout-box align-center">
                     <div class="left">
                         <div class="customer-login">
-                            Meet issue on shopping? <a>Get in touch with us here</a>
+                        Get in touch with us here |<a>Or send an email to silksyuen@gmail.com</a>
                         </div>
                         <div class="billing-fields">
                             <h3>Fill In Below</h3>
@@ -53,14 +53,13 @@
                                         <input placeholder="" name="name" type="text" required>
                                     </div>
                             
-
                                     <div class="colHalf">
                                         <label>Email</label>
                                         <input placeholder="" name="email" type="email" required>
                                     </div>
 
                                     <div class="colHalf">
-                                        <label>Contact</label>
+                                        <label>Phone No</label>
                                         <input placeholder="" name="mobile" type="text" required>
                                     </div>
 
@@ -68,7 +67,6 @@
                                         <label>Subject</label>
                                         <input placeholder="" name="subject" type="text" required>
                                     </div>
-                            
                             
                                     <div class="colFull">
                                         <label>Message</label>
@@ -78,8 +76,7 @@
 
                                     <div class="auth-btn">
                                         <button type="submit" class="button" name="contact">Submit</button>
-                                    </div>
-                                  
+                                    </div> 
                                 </div>
                             </form>
                         </div>
@@ -90,7 +87,6 @@
                 </div>
             </div>
         </section>
-
 
         <?php include 'component/footer.php'; ?>
          <script>

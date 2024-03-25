@@ -54,8 +54,7 @@
                         
                                 <div class="auth-btn">
                                     <button type="button" class="button" name="reset" id="resetButton">RESET</button>
-                                </div>
-                              
+                                </div>  
                             </div>
                         </div>
                     </div>
