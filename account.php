@@ -58,7 +58,7 @@
                                         </div>
                                         <div class="colHalf">
                                             <label>Phone No</label>
-                                            <input placeholder="" name="mobile" type="number" value="<?php echo $rowE['user_contact']; ?>" required>
+                                            <input placeholder="" name="mobile" type="text" value="<?php echo $rowE['user_contact']; ?>" required>
                                         </div>
                             
                                         <div class="colFull">

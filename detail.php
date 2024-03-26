@@ -86,6 +86,9 @@
 				<div class="shortdesc">
 					<?php echo html_entity_decode($row['product_short_desc']); ?>
 				</div>
+				<div class="desc hide">
+					<?php echo html_entity_decode($row['product_desc']); ?>
+				</div>
 
 				<div class="cartbtn">
 
