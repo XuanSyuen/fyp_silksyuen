@@ -30,6 +30,7 @@
 	</div>
 
 	<div class="logo">
+		<a href="index.php">
 		<img src="images/logo.png"/>
 	</div>
 	<div class="navmenu">
@@ -60,22 +61,21 @@
 			<span><?php echo $user_email != '' ? $user_email : 'Account'; ?></span>
 		</a>
 		<?php } ?>
+		<a href="#" class="hide">
+			<i class="fa-solid fa-heart"></i>
+			<span>Wishlist</span>
+		</a>
 		<a href="cart.php" class="cart-ico">
 			<div class="cartamount">
 				<!-- <span>0</span> -->
 			</div>
 			<img src="images/cart.png"/>
 		</a>
-
-		<a href="#" class="#">
+		<a href="qr.php" class="qr-ico">
 			<div class="#">
+				<!-- <span>0</span> -->
 			</div>
 			<img src="images/qr.png"/>
-		</a>
-
-		<a href="#" class="hide">
-			<i class="fa-solid fa-heart"></i>
-			<span>Wishlist<span>
 		</a>
 	</div>
 
