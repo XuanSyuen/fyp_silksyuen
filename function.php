@@ -312,13 +312,10 @@
 
         }
    
-        
 	    echo "<script>
 	            alert('Successfully update cart!');
 	            window.location.href= 'cart.php';
-	          </script>"; 
-  
-        
+	          </script>";  
     }
 
 
@@ -533,5 +530,27 @@
 
 	  exit();
 
+	}
+
+	if(isset($_POST['forgot'])) {
+		$email = isset($_POST['email']) ? trim($_POST['email']) : '';
+	
+		// Check for an empty email field
+		if (empty($email)) {
+			echo json_encode(['status' => 'error', 'message' => 'Please fill in the email field.']);
+			exit;
+		}
+	
+		// Check for a valid email format
+		if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+			echo json_encode(['status' => 'error', 'message' => 'Invalid email format.']);
+			exit;
+		}
+	
+		// Now you would check if the email is registered in your database
+		// If it is, send the reset link, if not, return an error message
+		// For demonstration, let's say the email is not found
+		echo json_encode(['status' => 'error', 'message' => 'Email not registered.']);
+		exit;
 	}
 ?>

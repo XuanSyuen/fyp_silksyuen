@@ -78,7 +78,7 @@
                                     </div>
                                     <div class="colHalf">
                                         <label>State</label>
-                                        <input name="state" type="text" required>
+                                        <input name="state"type="text" required>
                                     </div>
                                     <div class="colHalf">
                                         <label>Country</label>
@@ -233,9 +233,6 @@
                 }
 
             }
-        
-
         </script>
-
     </body>
 </html>

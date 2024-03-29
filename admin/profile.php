@@ -103,7 +103,7 @@
                                                
                                                 <div class="form-group">
                                                     <label for="password">New Password (Optional)</label>
-                                                    <input type="password" class="form-control" id="password" name="password" pattern="^(?=.*[A-Za-z])(?=.*\d).{8,}$" title="Password must be at least 8 characters long and include both letters and numbers." required placeholder="Enter Password" >
+                                                    <input type="password" class="form-control" id="password" name="password" pattern="^(?=.*[A-Za-z])(?=.*\d).{8,}$" title="Password must be at least 8 characters long and include both letters and numbers." placeholder="Enter Password" >
                                                 </div>
 
                                             </div>

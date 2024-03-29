@@ -58,12 +58,12 @@
                                         </div>
                                         <div class="colHalf">
                                             <label>Phone No</label>
-                                            <input placeholder="" name="mobile" type="text" value="<?php echo $rowE['user_contact']; ?>" required>
+                                            <input placeholder="" class="form-control numberOnly" name="mobile" type="text" value="<?php echo $rowE['user_contact']; ?>"required>
                                         </div>
                             
                                         <div class="colFull">
                                             <label>New Password (Optional)</label>
-                                            <input placeholder="" name="password" type="password" pattern="^(?=.*[A-Za-z])(?=.*\d).{8,}$" title="Password must be at least 8 characters long and include both letters and numbers." required>
+                                            <input placeholder="" name="password" type="password" pattern="^(?=.*[A-Za-z])(?=.*\d).{8,}$" title="Password must be at least 8 characters long and include both letters and numbers.">
                                         </div>
 
                                         <div class="auth-btn">
@@ -85,5 +85,7 @@
         <script>
             $('.rightmenu a[href="account.php"]').addClass('active');
         </script>
+
+
     </body>
 </html>

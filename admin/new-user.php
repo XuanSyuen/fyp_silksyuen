@@ -86,7 +86,8 @@
 
                                                 <div class="form-group">
                                                     <label for="password">Password</label>
-                                                    <input type="password" class="form-control" id="password" name="password" placeholder="Enter Password" required>
+                                                    <input placeholder="Enter Password" class="form-control" id="password" name="password" type="password" pattern="^(?=.*[A-Za-z])(?=.*\d).{8,}$" title="Password must be at least 8 characters long and include both letters and numbers." required>
+
                                                 </div>
 
                                             </div>

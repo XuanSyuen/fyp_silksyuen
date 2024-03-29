@@ -84,8 +84,7 @@
                                         
                                         <div class="form-group">
                                             <label>Admin Email</label>
-                                            <input type="text" class="form-control form-control-sm form-control-user rounded"
-                                                id="email" name="email" required autocomplete="off">
+                                            <input type="email" class="form-control form-control-sm form-control-user rounded" id="email" name="email" required autocomplete="off" placeholder="">
                                         </div>
                                         <div class="form-group">
                                              <label>Admin Password</label>
@@ -118,6 +117,24 @@
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
     <script src="js/admin.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var form = document.querySelector(".user"); // Assuming 'user' is your form's class
+            form.onsubmit = function(event) {
+                var emailInput = document.getElementById("email");
+                var emailError = document.getElementById("emailError");
+                
+                // Simple regex for basic email validation
+                var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailPattern.test(emailInput.value)) {
+                    emailError.textContent = "Please enter a valid email address."; // Set your custom message
+                    event.preventDefault(); // Prevent form submission
+                } else {
+                    emailError.textContent = ""; // Clear the error message
+                }
+            };
+        });
+    </script>
 
 </body>
 

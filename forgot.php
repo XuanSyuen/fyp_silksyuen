@@ -10,6 +10,7 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
         <link rel="stylesheet" href="css/common.css"/>
         <link rel="stylesheet" href="css/form.css"/>
@@ -45,6 +46,7 @@
                         </div>
                         <div class="billing-fields">
                             <h3>Forgot Password</h3>
+                            <form action="function.php" method="POST" onsubmit="return validateForm()">
                             <div class="row">
 
                                 <div class="colFull">
@@ -53,7 +55,7 @@
                                 </div>
                         
                                 <div class="auth-btn">
-                                    <button type="button" class="button" name="reset" id="resetButton">RESET</button>
+                                    <button type="submit" class="button" name="reset" id="resetButton">RESET</button>
                                 </div>  
                             </div>
                         </div>
@@ -68,70 +70,71 @@
 
         <?php include 'component/footer.php'; ?>
         <script>
-            $('.rightmenu a[href="login.php"]').addClass('active');
-            var sendlink = true;
-            $(document).ready(function(){
-                $("#resetButton").on("click", function(){
+            $(document).ready(function() {
+        $("#resetButton").on("click", function(event) {
+            event.preventDefault(); // Prevent the form from submitting normally
 
-                    var button = $(this);
-                    var count = 120; // 2 minutes in seconds
+            var email = $('#email').val().trim();
 
-                    if(sendlink){
-                        button.text("Please Wait..."); // Reset button text
-                        button.prop("disabled", true); // Enable button after countdown
-                        var param = {
-                            'email': $('#email').val(),
-                            'forgot' : 1
-                        }
+            // Validate email field
+            if (email === '') {
+                alert('Please enter your email address.');
+                return; // Stop the function if validation fails
+            } else if (!validateEmail(email)) {
+                alert('Please enter a valid email address.');
+                return; // Stop the function if validation fails
+            }
 
-                        $.ajax({
-                            type: "POST",
-                            url: "function.php",
-                            data: param,
-                            cache: false,
-                            dataType: "json",
-                            success: function(data) {
+            // Email is valid, proceed with AJAX request
+            sendPasswordResetRequest(email);
+        });
 
-                                alert('Reset Link Have Sent!');
+        // Helper function to validate email format
+        function validateEmail(email) {
+            var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            return re.test(String(email).toLowerCase());
+        }
 
-                            },
-                            error: function(data){
-                            
-                            }
-                        });
+        // Function to handle the AJAX request
+        function sendPasswordResetRequest(email) {
+            var button = $("#resetButton");
+            var count = 120; // 2 minutes in seconds
+            button.prop("disabled", true).text("Please Wait..."); // Disable button and change text
 
-                        $('#email').val('');
-                        alert('Reset Email Sent! Please Your Email');
-
-                        sendlink = false;
-
-                        
-
-                        button.prop("disabled", true); // Disable button during countdown
-
-                        var countdownInterval = setInterval(function(){
-                            count--;
-                            var minutes = Math.floor(count / 60);
-                            var seconds = count % 60;
-
-                            // Format seconds with two decimals
-                            var formattedSeconds = seconds < 10 ? "0" + seconds : seconds;
-
-                            // Update button text to show countdown
-                            button.text("Resend in: " + minutes + ":" + formattedSeconds);
-
-                            if(count === 0) {
-                                clearInterval(countdownInterval);
-                                button.text("Get Reset Link"); // Reset button text
-                                button.prop("disabled", false); // Enable button after countdown
-                                sendlink = true;
-                            }
-                        }, 1000); // Update every half second
-
+            $.ajax({
+                type: "POST",
+                url: "function.php",
+                data: { 'email': email, 'forgot': 1 },
+                dataType: "json",
+                success: function(response) {
+                    if(response.status === 'error') {
+                        alert(response.message);
+                    } else {
+                        alert('Reset Link Have Sent! Please check your email.');
                     }
-                    
-                });
+                    button.prop("disabled", false).text("RESET"); // Enable button and reset text
+                },
+                error: function() {
+                    alert('There was an error processing your request. Please try again.');
+                    button.prop("disabled", false).text("RESET"); // Enable button and reset text
+                }
             });
+
+            // Start countdown for resend link
+            var countdownInterval = setInterval(function() {
+                count--;
+                var minutes = Math.floor(count / 60);
+                var seconds = count % 60;
+                var formattedSeconds = seconds < 10 ? "0" + seconds : seconds;
+                button.text("Resend in: " + minutes + ":" + formattedSeconds);
+
+                if (count === 0) {
+                    clearInterval(countdownInterval);
+                    button.text("RESET").prop("disabled", false); // Enable button and reset text
+                }
+            }, 1000); // Update every second
+        }
+    });
         </script>
         
 

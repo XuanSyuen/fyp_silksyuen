@@ -45,7 +45,7 @@
                         </div>
                         <div class="billing-fields">
                             <h3>Fill In Below</h3>
-                            <form action="function.php" method="POST">
+                            <form action="function.php" method="POST" onsubmit="return validateForm()">
                                 <div class="row">
 
                                     <div class="colFull">
@@ -89,8 +89,55 @@
         </section>
 
         <?php include 'component/footer.php'; ?>
-         <script>
+        <script>
             $('.navmenu a[href="contact.php"]').addClass('active');
+
+            function validateForm() {
+        // Validate name
+        var name = document.forms[0]["name"].value;
+        if (name == "") {
+            alert("Name must be filled out");
+            return false;
+        }
+
+        // Validate email
+        var email = document.forms[0]["email"].value;
+        if (email == "") {
+            alert("Email must be filled out");
+            return false;
+        } else {
+            // Simple email format validation
+            var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(email)) {
+                alert("Invalid email format");
+                return false;
+            }
+        }
+
+        // Validate phone number
+        var mobile = document.forms[0]["mobile"].value;
+        if (mobile == "") {
+            alert("Phone No must be filled out");
+            return false;
+        }
+
+        // Validate subject
+        var subject = document.forms[0]["subject"].value;
+        if (subject == "") {
+            alert("Subject must be filled out");
+            return false;
+        }
+
+        // Validate message
+        var message = document.forms[0]["message"].value;
+        if (message == "") {
+            alert("Message must be filled out");
+            return false;
+        }
+
+        // If everything is valid, allow form submission
+        return true;
+    }
         </script>
         
 
