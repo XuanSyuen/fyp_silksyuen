@@ -1,3 +1,24 @@
+<?php
+// SQL to fetch the top-selling products
+$sqlHotSales = "SELECT p.product_id, p.product_name, p.product_image, p.product_price, SUM(oi.qty) AS total_sold
+                FROM order_item oi
+                JOIN product p ON oi.product_id = p.product_id
+                GROUP BY p.product_id
+                ORDER BY total_sold DESC
+                LIMIT 4"; // Get the top 4 best-selling products
+
+include 'dbcon.php';
+
+$resultHotSales = $conn->query($sqlHotSales);
+$hotSalesProducts = [];
+
+if ($resultHotSales && $resultHotSales->num_rows > 0) {
+    while ($row = $resultHotSales->fetch_assoc()) {
+        $hotSalesProducts[] = $row;
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -184,15 +205,11 @@
 
 				?>
 
-
-
 			</div>
-
 
 			<div class="cate-left">
 				<img src="images/shape.png" alt="">
 			</div>
-
 
 			<div class="cate-shage">
 				<img src="images/shape1.png" alt="">
@@ -202,8 +219,42 @@
 	</section>
 	<!-- most popular -->
 
-	<script src="js/slide.js"></script>
+	<!-- Hot Sales Section -->
+	<section class="popular-section">
+		<div class="title-box">
+			<div class="title-group">
+				<h2 class="top">Hot Sales</h2>
+			</div>
+			<div class="prod-box">
+				<?php foreach ($hotSalesProducts as $product): ?>
+					<div class="single">
+					<div class="tag hot">
+			                			Hot
+			                		</div>
+						<a href="detail.php?pid=<?php echo htmlspecialchars($product['product_id']); ?>">
+							<img src="admin/upload/<?php echo htmlspecialchars($product['product_image']); ?>" alt="<?php echo htmlspecialchars($product['product_name']); ?>" />
+						</a>
+						<p><?php echo htmlspecialchars($product['product_name']); ?></p>
+						<p>RM <?php echo number_format($product['product_price'], 2); ?></p>
+						<div class="action flexcol">
+							<a class="add minbtn" href="detail.php?pid=<?php echo htmlspecialchars($product['product_id']); ?>">Details</a>
+						</div>
+					</div>
+				<?php endforeach; ?>
+			</div>
+		</div>
+		<!-- Include the category shapes if needed -->
+		<div class="cate-left">
+			<img src="images/shape.png" alt="">
+		</div>
+		<div class="cate-shage">
+			<img src="images/shape1.png" alt="">
+		</div>
+	</section>
+	<!-- End Hot Sales Section -->
+
 	<?php include 'component/footer.php'; ?>
+	<script src="js/slide.js"></script>
 	<script>
 		$('.navmenu a[href="index.php"]').addClass('active');
 	</script>

@@ -537,13 +537,6 @@ img {vertical-align: middle;}
     border: 1px solid #f1f1f1;
 }
 
-@media only screen and (min-width: 800px) and (max-width: 1200px){
-    
-    .prod-box .single{
-/*      width: calc(100%/2 - 50px);*/
-    }
-}
-
 @media only screen and (max-width: 800px){
     .prod-box{
         justify-content: center;

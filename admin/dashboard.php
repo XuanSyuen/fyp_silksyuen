@@ -66,6 +66,42 @@
             'total_sales' => $row['total_sales']
         );
     }
+
+    // Fetch the data for the top 4 best-selling products
+    $sqlTopProducts = "SELECT p.product_name, SUM(oi.qty) AS total_quantity_sold
+    FROM order_item oi
+    JOIN product p ON oi.product_id = p.product_id
+    GROUP BY oi.product_id
+    ORDER BY total_quantity_sold DESC
+    LIMIT 4";
+    $resultTopProducts = mysqli_query($conn, $sqlTopProducts);
+    $topProductsLabels = [];
+    $topProductsData = [];
+
+    if ($resultTopProducts && mysqli_num_rows($resultTopProducts) > 0) {
+    while ($row = mysqli_fetch_assoc($resultTopProducts)) {
+    $topProductsLabels[] = $row['product_name'];
+    $topProductsData[] = $row['total_quantity_sold'];
+    }
+    }
+
+    // SQL to fetch the top 4 lowest-selling products
+    $sqlLowestSelling = "SELECT p.product_name, SUM(oi.qty) AS total_quantity_sold
+    FROM order_item oi
+    JOIN product p ON oi.product_id = p.product_id
+    GROUP BY oi.product_id
+    ORDER BY total_quantity_sold ASC
+    LIMIT 4"; // Get the lowest 4 selling products
+    $resultLowestSelling = mysqli_query($conn, $sqlLowestSelling);
+    $lowestSellingProductsData = [];
+    $lowestSellingProductsLabels = [];
+
+    if ($resultLowestSelling && mysqli_num_rows($resultLowestSelling) > 0) {
+    while ($row = mysqli_fetch_assoc($resultLowestSelling)) {
+    $lowestSellingProductsLabels[] = $row['product_name'];
+    $lowestSellingProductsData[] = $row['total_quantity_sold'];
+    }
+    }
 ?>
 
 <!DOCTYPE html>
@@ -181,13 +217,23 @@
                         </div>
 
                         <!-- Total Sales Revenue -->
-                        <div class="col-xl-6 col-lg-6">
+                        <div class="col-xl-6 col-lg-6" style="position: relative; height:40vh; width:80vw; margin-top: 50px">
                             <canvas id="total-sales-revenue-chart"></canvas>
                         </div>
 
                         <!-- Sales by Product -->
-                        <div class="col-xl-6 col-lg-6">
+                        <div class="col-xl-6 col-lg-6" style="position: relative; height:40vh; width:80vw; margin-top: 50px">
                             <canvas id="sales-by-product-chart"></canvas>
+                        </div>
+
+                        <!-- Top Sales by Product -->
+                        <div class="col-xl-6 col-lg-6" style="position: relative; height:40vh; width:80vw; margin-top: 50px">
+                            <canvas id="top-products-chart"></canvas>
+                        </div>
+
+                        <!-- Least Sales by Product -->
+                        <div class="col-xl-6 col-lg-6" style="position: relative; height:40vh; width:80vw; margin-top: 50px">
+                            <canvas id="lowest-selling-products-chart"></canvas>
                         </div>
 
                     </div>
@@ -278,6 +324,52 @@
                 }
             }
         });
+    });
+
+    // Top 4 Best-Selling Products Chart
+    var ctxTopProducts = document.getElementById('top-products-chart').getContext('2d');
+    var topProductsChart = new Chart(ctxTopProducts, {
+        type: 'bar', // You can change this to 'line', 'pie', etc.
+        data: {
+            labels: <?php echo json_encode($topProductsLabels); ?>,
+            datasets: [{
+                label: 'Top 4 Best-Selling Products',
+                data: <?php echo json_encode($topProductsData); ?>,
+                backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                borderColor: 'rgba(255, 99, 132, 1)',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+
+    // Prepare the data for the Lowest Selling Products chart
+    var ctxLowestSelling = document.getElementById('lowest-selling-products-chart').getContext('2d');
+    var lowestSellingProductsChart = new Chart(ctxLowestSelling, {
+        type: 'bar', // You can change this to 'line', 'pie', etc.
+        data: {
+            labels: <?php echo json_encode($lowestSellingProductsLabels); ?>,
+            datasets: [{
+                label: 'Top 4 Lowest-Selling Products',
+                data: <?php echo json_encode($lowestSellingProductsData); ?>,
+                backgroundColor: 'rgba(255, 159, 64, 0.2)',
+                borderColor: 'rgba(255, 159, 64, 1)',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
     });
     </script>
   
