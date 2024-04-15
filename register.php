@@ -58,7 +58,7 @@
                                         </div>
                                         <div class="colHalf">
                                             <label>Phone No</label>
-                                            <input placeholder="" name="mobile" type="text" required>
+                                            <input placeholder="" name="mobile" type="number" required>
                                         </div>
                             
                                         <div class="colFull">

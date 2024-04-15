@@ -96,14 +96,14 @@
                                                 </div>
 
                                                 <div class="form-group">
-                                                    <label for="sdesc">Short Description</label>
+                                                    <label for="sdesc">Description</label>
                                                     <textarea id="ssummernote" name="sdesc"></textarea>
                                                 </div>
 
-                                                <div class="form-group">
+                                                <!-- <div class="form-group">
                                                     <label for="desc">Description</label>
                                                     <textarea id="summernote" name="desc"></textarea>
-                                                </div>
+                                                </div> -->
 
                                                 <div class="form-group">
                                                     <label for="image">Product Image</label>

@@ -164,11 +164,13 @@
                                         </tr>
                                     </tfoot>
                                 </table>
+    
                                 <div class="checkout-payment" id="payment">
+                                <h3>Payment Method</h3>
                                     <ul class="wc_payment_methods payment_methods methods">
                                         <li class="wc_payment_method payment_method_bacs">
                                             <input checked="checked"  name="payment_method" class="input-radio" id="payment_method_bacs" type="radio" value="transfer" class="optionPay" onclick="changeView()">
-                                            <label for="payment_method_bacs">Credit Card or Debit Card</label>
+                                            <label for="payment_method_bacs" style="margin-top: 20px;">Credit Card or Debit Card</label>
                                             <div class="payment_box payment_method_bacs visibales" id="transfer-desc">
                                                 <p>
                                                 Securely pay for purchases using your credit or debit card, offering convenience and flexibility. Simply input your card details during checkout for swift transactions.

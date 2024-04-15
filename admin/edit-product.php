@@ -108,14 +108,14 @@
                                                 </div>
 
                                                 <div class="form-group">
-                                                    <label for="sdesc">Short Description</label>
+                                                    <label for="sdesc">Description</label>
                                                     <textarea id="ssummernote" name="sdesc"><?php echo $rowE['product_short_desc']; ?></textarea>
                                                 </div>
 
-                                                <div class="form-group">
+                                                <!-- <div class="form-group">
                                                     <label for="desc">Description</label>
                                                     <textarea id="summernote" name="desc"><?php echo $rowE['product_desc']; ?></textarea>
-                                                </div>
+                                                </div> -->
                                                 
                                                 <div class="form-group">
                                                     <label for="status">Status</label>
