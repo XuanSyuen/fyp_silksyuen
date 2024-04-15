@@ -43,6 +43,29 @@
         $totalC = 0;
     }
 
+    // Total Sales Revenue Query
+    $sqlTotalRevenue = "SELECT SUM(qty * price) AS total_revenue FROM order_item";
+    $resultTotalRevenue = mysqli_query($conn, $sqlTotalRevenue);
+    $totalRevenue = 0;
+    if ($resultTotalRevenue) {
+        $rowTotalRevenue = mysqli_fetch_assoc($resultTotalRevenue);
+        $totalRevenue = $rowTotalRevenue['total_revenue'];
+    }
+
+    // Sales by Product Query
+    $sqlSalesByProduct = "SELECT p.product_name, SUM(oi.qty) AS units_sold, SUM(oi.qty * oi.price) AS total_sales 
+                        FROM order_item oi
+                        JOIN product p ON oi.product_id = p.product_id
+                        GROUP BY oi.product_id";
+    $resultSalesByProduct = mysqli_query($conn, $sqlSalesByProduct);
+    $productSales = [];
+    while ($row = mysqli_fetch_assoc($resultSalesByProduct)) {
+        $productSales[] = array(
+            'product_name' => $row['product_name'],
+            'units_sold' => $row['units_sold'],
+            'total_sales' => $row['total_sales']
+        );
+    }
 ?>
 
 <!DOCTYPE html>
@@ -157,6 +180,15 @@
                             </div>
                         </div>
 
+                        <!-- Total Sales Revenue -->
+                        <div class="col-xl-6 col-lg-6">
+                            <canvas id="total-sales-revenue-chart"></canvas>
+                        </div>
+
+                        <!-- Sales by Product -->
+                        <div class="col-xl-6 col-lg-6">
+                            <canvas id="sales-by-product-chart"></canvas>
+                        </div>
 
                     </div>
 
@@ -185,6 +217,68 @@
             $('.nav-item .nav-link[href="dashboard.php"]').parent().addClass('active');
             
         });
+    </script>
+
+    <script type="text/javascript">
+    // Passing PHP data to JavaScript
+    var totalRevenue = <?php echo json_encode($totalRevenue); ?>;
+    var productSales = <?php echo json_encode($productSales); ?>;
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Chart for Total Sales Revenue
+        var ctxRevenue = document.getElementById('total-sales-revenue-chart').getContext('2d');
+        new Chart(ctxRevenue, {
+            type: 'bar',
+            data: {
+                labels: ["Total Revenue"],
+                datasets: [{
+                    label: 'Total Sales Revenue',
+                    data: [totalRevenue],
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        // Parsing data for the Sales by Product chart
+        var productNames = productSales.map(function(item) { return item.product_name; });
+        var productTotals = productSales.map(function(item) { return item.total_sales; });
+
+        // Chart for Sales by Product
+        var ctxProduct = document.getElementById('sales-by-product-chart').getContext('2d');
+        new Chart(ctxProduct, {
+            type: 'bar',
+            data: {
+                labels: productNames,
+                datasets: [{
+                    label: 'Sales by Product',
+                    data: productTotals,
+                    backgroundColor: productSales.map(() => 'rgba(153, 102, 255, 0.2)'),
+                    borderColor: productSales.map(() => 'rgba(153, 102, 255, 1)'),
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                indexAxis: 'y',
+                scales: {
+                    x: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    });
     </script>
   
 </body>
