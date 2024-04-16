@@ -19,6 +19,7 @@
 
 	<link rel="stylesheet" href="css/common.css" />
 	<link rel="stylesheet" href="css/product.css" />
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 	<title>Products</title>
 
@@ -88,6 +89,14 @@
 				</div>
 				<div class="desc hide">
 					<?php echo html_entity_decode($row['product_desc']); ?>
+				</div>
+
+				<div class="shortdesc" style="font-weight: bold">
+					<label for="size">Size:</label>
+					<div class="size-buttons">
+						<button type="button" class="size-btn" data-size="S">S</button>
+						<button type="button" class="size-btn" data-size="M">M</button>
+						<button type="button" class="size-btn" data-size="L">L</button>					</div>
 				</div>
 
 				<div class="cartbtn">
@@ -215,19 +224,74 @@
 			$('.navmenu a[href="products.php"]').addClass('active');
 
 		});
-		function detailAddCart(pid) {
 
+		$(document).ready(function () {
+			// Initial setup for the hover effect on all size buttons
+			$('.size-btn').css({
+				'padding': '8px 26px', // Increase padding for a larger button
+				'font-size': '14px',
+				'font-weight': 'bold',    // Adjust font size as needed
+				'border-radius': '5px', // Optional: if you want rounded corners
+				'background-color': '#F6F7FB',
+				'color': 'black',
+				'border': 'transparent',
+				'margin-right': '10px', // Add some space between the buttons
+				'margin-top': '5px',
+				'cursor': 'pointer'
+			}).hover(function() {
+				// Change button style on hover
+				$(this).css({
+					'background-color': 'black',
+					'color': 'white'
+				});
+			}, function() {
+				// Reset button style after hover if not selected
+				if (!$(this).hasClass('selected')) {
+					$(this).css({
+						'background-color': '#F6F7FB',
+						'color': 'black'
+					});
+				}
+			});
+
+			// Click event for size buttons
+			$('.size-btn').on('click', function() {
+				// Reset all buttons to the initial style and remove selected class
+				$('.size-btn').removeClass('selected').css({
+					'background-color': '#F6F7FB',
+					'color': 'black',
+					'border': 'transparent'
+				});
+
+				// Apply the selected style to the clicked button and add selected class
+				$(this).addClass('selected').css({
+					'background-color': 'black',
+					'color': 'white'
+				});
+			});
+		});
+
+		function detailAddCart(pid) {
 			var val = $('#amount').val();
+			var size = $('.size-btn.selected').data('size'); // Get the selected size from the button with class 'selected'
+
+			if (!size) {
+				alert('Please select a size');
+				return;
+			}
+
 			if (val < 1 || val == '') {
 				alert('Please enter qty');
 				return;
 			}
+
 			var productid = pid;
 			var uid = '<?php echo $cid; ?>';
 			var param = {
 				'pid': productid,
 				'uid': uid,
 				'qty': val,
+				'size': size, // Include size in the AJAX data
 				'addCart': 1
 			}
 
@@ -238,24 +302,16 @@
 				cache: false,
 				dataType: "json",
 				success: function (data) {
-
-
 					alert(data.msg);
 					if (data.total !== undefined) {
 						$('.cartamount').html(`<span>${data.total}</span>`);
 					}
-
-
 				},
 				error: function (data) {
-
+					// Handle errors if needed
 				}
 			});
-
-
 		}
-
-		
 	</script>
 </body>
 
