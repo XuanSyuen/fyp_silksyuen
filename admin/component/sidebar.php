@@ -57,7 +57,7 @@
         <div id="collapseMenuA" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Menu</h6>
-                <a class="collapse-item" href="new-user.php">New User Account</a>
+                <!-- <a class="collapse-item" href="new-user.php">New User Account</a> -->
                 <a class="collapse-item" href="user.php">User List</a>
             </div>
         </div>

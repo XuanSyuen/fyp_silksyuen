@@ -35,7 +35,7 @@
         </section>
 
         <div class="empty-login">
-            <img src="images/mobile-qr-1.png" />
+            <img src="images/mobile-qr.png" />
             <h3>Unlock the mobile experience effortlessly by scanning the QR code above</h3>
         </div>
 

@@ -27,7 +27,7 @@
                     <h2 class="banner-title">Cart</h2>
                 </div>
                 <div class="bread-crumb">
-                    <a href="index.html">Home</a> / Cart
+                    <a href="index.php">Home</a> / Cart
                 </div>
                 
             </div>
