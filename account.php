@@ -86,6 +86,5 @@
             $('.rightmenu a[href="account.php"]').addClass('active');
         </script>
 
-
     </body>
 </html>

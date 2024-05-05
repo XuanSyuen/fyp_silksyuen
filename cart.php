@@ -149,14 +149,14 @@
                             </form>
                             <div class="checkout-box">
                                 <div class="left">
-                                    <!--<div class="coupon">
+                                    <div class="coupon">
                                         <h3>Counpon discount</h3>
                                         <p>
                                             Enter your code if you have one. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
                                         </p>
                                         <input type="text" name="coupon_code" placeholder="Enter Your code Here"> 
                                         <button type="submit" class="button" name="apply_coupon">Apply coupon</button>
-                                     </div> -->
+                                     </div>
                                 </div>
                                 <div class="right">
                                     <div class="cart-totals">

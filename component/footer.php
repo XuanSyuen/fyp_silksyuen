@@ -1,4 +1,4 @@
-<!-- <section class="mailchimp-section">
+<section class="mailchimp-section">
 	<div class="box">
 		<h3 class="sec-title">Get Discount 30% Off</h3>
     	<form class="mailchimp-form" action="#" method="post">
@@ -9,16 +9,16 @@
         	<img src="images/shape-mail.png" alt="">
         </div>
     </div>
-</section> -->
+</section>
 
 <section class="copyright-section">
 	<div class="copyrightbox">
-		<!-- <div class="left"> -->
-           	<!-- <ul class="menu-link"> -->
-               <!-- <li><a href="admin/index.php">Admin Login</a></li>  -->
-               <!-- <li><a href="#">Terms of Service</a></li> -->
-            <!-- </ul> -->
-        <!-- </div> -->
+		<div class="left">
+           	<ul class="menu-link">
+               <li><a href="admin/index.php">Admin Login</a></li>
+               <li><a href="#">Terms of Service</a></li>
+            </ul>
+        </div>
 
         <div id="google_translate_element"></div>
 
@@ -48,7 +48,6 @@ function googleTranslateElementInit() {
 			}else{
 				$('#m-menu').addClass('active');
 			}
-			
 
 		});
 
@@ -56,7 +55,6 @@ function googleTranslateElementInit() {
 		if(cid !== ""){
 			checkCart();
 		}
-
 	});
 
 
@@ -88,7 +86,6 @@ function googleTranslateElementInit() {
             
             }
         });
-
 
 	}
 
@@ -124,8 +121,6 @@ function googleTranslateElementInit() {
             }
         });
 
-    }
-
-        
+    }        
 
 </script>

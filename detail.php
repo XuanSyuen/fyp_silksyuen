@@ -183,14 +183,9 @@
                     }
 
                 }else{
-
-
                 	echo '<p style="margin-top: 10px;">No Review Yet</p>';
-
-
                 }
 			?>
-		
 		</div>
 
 	</section>

@@ -10858,9 +10858,6 @@ jQuery.each(
 	}
 );
 
-
-
-
 // Support: Android <=4.0 only
 // Make sure we trim BOM and NBSP
 // Require that the "whitespace run" starts from a non-whitespace

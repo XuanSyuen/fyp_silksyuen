@@ -3,7 +3,6 @@
     include 'dbcon.php';
 ?>
 
-
 <?php
     
     if( isset($_SESSION["uid"]) ){
@@ -158,12 +157,7 @@
                 evt.preventDefault();
             }
         });
-
-      
-
        
     </script>
-
 </body>
-
 </html>

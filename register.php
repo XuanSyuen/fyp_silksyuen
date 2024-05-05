@@ -57,7 +57,7 @@
                                             <input placeholder="" name="email" type="email" required>
                                         </div>
                                         <div class="colHalf">
-                                            <label>Phone No</label>
+                                            <label>Mobile No</label>
                                             <input placeholder="" name="mobile" type="number" required>
                                         </div>
                             
@@ -69,7 +69,6 @@
                                         <div class="auth-btn">
                                             <button type="submit" class="button" name="register">SIGN UP</button>
                                         </div>
-                                   
                                 </div>
                             </form>
                         </div>
@@ -81,10 +80,7 @@
             </div>
         </section>
 
-
         <?php include 'component/footer.php'; ?>
-        
-     
 
     </body>
 </html>

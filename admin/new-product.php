@@ -100,21 +100,16 @@
                                                     <textarea id="ssummernote" name="sdesc"></textarea>
                                                 </div>
 
-                                                <!-- <div class="form-group">
+                                                <div class="form-group">
                                                     <label for="desc">Description</label>
                                                     <textarea id="summernote" name="desc"></textarea>
-                                                </div> -->
+                                                </div>
 
                                                 <div class="form-group">
                                                     <label for="image">Product Image</label>
                                                     <input type="file" class="form-control file-input" name="image" required>
-                                                </div>
-                                                
-                                            
-                                                
-                                            </div>
-
-                                           
+                                                </div>  
+                                            </div> 
                                         </div>
                                         
                                         <div class="my-3 text-center">
@@ -128,9 +123,6 @@
                     </div>
 
                 </div>
-
-        
-
             </div>
 
             <?php include 'component/footer.php' ?>
@@ -170,7 +162,6 @@
                 evt.preventDefault();
             }
         });
-
        
     </script>
 

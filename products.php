@@ -82,7 +82,7 @@
                             Search
                         </div>
                     </div>
-                    <!-- <div class="sort-view">
+                    <div class="sort-view">
                         <a class="view-mode active" href="#"><i class="fa-solid fa-grip"></i></a>
                         <a class="view-mode" href="#"><i class="fa-solid fa-bars"></i></a>
                         <div class="sorts">
@@ -95,7 +95,7 @@
                             </select>
                             <i class="fa-solid fa-caret-down"></i>
                         </div>
-                    </div> -->
+                    </div>
                 </div>
 
             </div>
@@ -166,7 +166,7 @@
             </div>
         </div>
 
-        <!--<div class="pagination-row">
+        <div class="pagination-row">
 
                 <div class="goru-pagination center clearfix">
                     <a class="prev" href="#"><i class="fa-solid fa-arrow-left"></i></a>
@@ -178,7 +178,7 @@
                     <a class="next" href="#"><i class="fa-solid fa-arrow-right"></i></a>
                 </div>
                 
-             </div> -->
+             </div>
 
     </section>
     <!-- product -->

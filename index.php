@@ -258,7 +258,5 @@ if ($resultHotSales && $resultHotSales->num_rows > 0) {
 	<script>
 		$('.navmenu a[href="index.php"]').addClass('active');
 	</script>
-
 </body>
-
 </html>

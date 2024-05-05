@@ -70,11 +70,7 @@
                                                 <div class="form-group">
                                                     <label for="username">Email</label>
                                                     <input type="email" class="form-control" id="email" name="email" placeholder="Enter Email" required>
-                                                </div>
-
-
-
-                                                
+                                                </div>   
                                             </div>
 
                                             <div class="col-12 col-md-6">
@@ -106,9 +102,6 @@
                     </div>
 
                 </div>
-
-        
-
             </div>
 
             <?php include 'component/footer.php' ?>
@@ -145,7 +138,6 @@
                 evt.preventDefault();
             }
         });
-
     
     </script>
 
