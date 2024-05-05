@@ -16,7 +16,7 @@
     <li class="nav-item">
         <a class="nav-link" href="dashboard.php">
             <i class="fas fa-fw fa-home"></i>
-            <span>My Dashboard</span>
+            <span>Dashboard</span>
         </a>
     </li>
 
@@ -25,7 +25,7 @@
     <li class="nav-item">
         <a class="nav-link" href="order.php">
             <i class="fas fa-fw fa-truck"></i>
-            <span>Manage Orders</span>
+            <span>Manage Order</span>
         </a>
     </li>
 
