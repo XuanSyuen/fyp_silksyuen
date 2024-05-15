@@ -194,7 +194,6 @@
                     <?php
                         }
                     ?>
-                   
                 <?php } ?>
             </div>
         </section>

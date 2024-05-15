@@ -57,7 +57,6 @@ function googleTranslateElementInit() {
 		}
 	});
 
-
 	function checkCart(){
 
 		var uid = '<?php echo $cid; ?>';
@@ -79,14 +78,12 @@ function googleTranslateElementInit() {
            		}else{
            			$('.cartamount').html('');
            		}
-              
 
             },
             error: function(data){
             
             }
         });
-
 	}
 
     function AddCart(pid){
@@ -122,5 +119,4 @@ function googleTranslateElementInit() {
         });
 
     }        
-
 </script>
