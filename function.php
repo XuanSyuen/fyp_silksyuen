@@ -155,6 +155,8 @@
 				$resultt = mysqli_query($conn, $sqlt);
 				$rowt = $resultt->fetch_assoc();
 
+				$sqlt = "SELECT SUM (total_qty) as total from cart where user_id = '$userid'";
+
 				$msg = "Successfully update cart";
 				echo json_encode(array(
 				    'msg' => $msg,
@@ -163,7 +165,6 @@
 				));
 
 				exit();
-
 		    
 		  	} else {
 		        $msg = "Failed to update cart";
