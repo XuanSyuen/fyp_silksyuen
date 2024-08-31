@@ -170,7 +170,6 @@
 		        $msg = "Failed to update cart";
 		  		returnErr($msg);
 		  	}
-		      
 
 		}else{
 
@@ -217,7 +216,6 @@
 
 			  exit();
 		      
-
 		}else{
 
 			echo json_encode(array(
@@ -245,7 +243,6 @@
     		$address = $address1 . ', ' . $postcode . ' ,' . $city . ', ' . $state . ', ' . $country;
     	}
 
-
     	$remark = mysqli_real_escape_string($conn, $_POST['remark']);
     	date_default_timezone_set("Asia/Kuala_Lumpur");
         $current = date('Y-m-d H:i:s'); 
@@ -257,16 +254,13 @@
 	    mysqli_query($conn, $sql);
 	    $last_order_id = mysqli_insert_id($conn);
 
-
     	$sqlGet = "SELECT cart.cart_id, cart.total_qty, cart.product_id, cart.user_id, product.product_price FROM cart INNER JOIN product ON cart.product_id = product.product_id where cart.user_id = '$uid'";
 
 	    $resultGet = mysqli_query($conn, $sqlGet);
 	    $dataGet = mysqli_fetch_all($resultGet);
 
-	    
 	    foreach ($dataGet as $key => $value) {
-
-	    	 
+ 
 	    	 $qty = $value[1];
 	    	 $pid = $value[2];
 	    	 $price = $value[4];
@@ -274,11 +268,8 @@
 
 	    	 $sqlItem = "INSERT INTO order_item (product_id, qty, price, order_id) VALUES ('$pid', '$qty', '$totalprice', '$last_order_id')";
 
-	    	 mysqli_query($conn, $sqlItem);
-
-	        
+	    	 mysqli_query($conn, $sqlItem);   
 	    }
-
 
         $sqlD = "DELETE FROM cart WHERE user_id='$uid'";
 
@@ -293,9 +284,6 @@
                     window.location.href= 'history.php';
                   </script>";
         }
-
-
-
     }
 
     if(isset($_POST['updatecart'])){
@@ -310,7 +298,6 @@
         	
         	$sql = "UPDATE cart SET total_qty = '$newqty' WHERE cart_id = '$id' ";
         	mysqli_query($conn, $sql);
-
         }
    
 	    echo "<script>
@@ -329,18 +316,13 @@
 	 	$queryU = mysqli_query($conn, $sqlUpdate);
 	 	if($queryU) {
 
-		
 			$msg = "Successfully to refund item";
 			returnSuccess($msg);
-
     
 	  	} else {
 	        $msg = "Failed to refund";
 	  		returnErr($msg);
-	  	}
-   
-     
-        
+	  	} 
     }
 
     if(isset($_POST['contact'])){

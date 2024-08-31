@@ -47,7 +47,6 @@
                             <h3>Register New Account</h3>
                             <form action="function.php" method="POST">
                                 <div class="row">
-                                  
                                         <div class="colFull">
                                             <label>Name</label>
                                             <input placeholder="" name="name" type="text" required>

@@ -153,9 +153,7 @@ if ($resultHotSales && $resultHotSales->num_rows > 0) {
 
 	<!-- most popular -->
 	<section class="popular-section">
-
 		<div class="title-box">
-
 			<div class="title-group">
 				<h2 class="top">New Product</h2>
 			</div>

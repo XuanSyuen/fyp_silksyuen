@@ -146,7 +146,6 @@
                                         Details
                                     </a>';
                         }
-
                         echo '</div>
                                 </div>';
 

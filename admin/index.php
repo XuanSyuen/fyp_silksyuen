@@ -34,8 +34,6 @@
             background: #000;
             color: #ffffff;
         }
-        
-
     </style>
 
 </head>

@@ -29,7 +29,6 @@
                 <div class="bread-crumb">
                     <a href="index.html">Home</a> / QR Code
                 </div>
-                
             </div>
             
         </section>

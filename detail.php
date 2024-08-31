@@ -214,7 +214,6 @@
 				var newValue = parseFloat(input) + 1;
 				$(`.qty`).val(newValue);
 
-
 			});
 			$('.navmenu a[href="products.php"]').addClass('active');
 

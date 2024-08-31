@@ -28,8 +28,7 @@
                 </div>
                 <div class="bread-crumb">
                     <a href="index.php">Home</a> / Cart
-                </div>
-                
+                </div>      
             </div>
             
         </section>

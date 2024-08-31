@@ -48,7 +48,6 @@ function googleTranslateElementInit() {
 			}else{
 				$('#m-menu').addClass('active');
 			}
-
 		});
 
 		var cid = '<?php echo $cid; ?>';

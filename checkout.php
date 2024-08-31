@@ -219,8 +219,7 @@
             var option3 = document.querySelector('#paypal-desc');
 
             function changeView(){
-
-
+                
                 var value = document.querySelector('input[name="payment_method"]:checked').value;
                 option1.classList.remove('visibales');
                 option2.classList.remove('visibales');

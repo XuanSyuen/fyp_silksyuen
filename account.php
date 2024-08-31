@@ -42,8 +42,8 @@
                                   $sqlE = "SELECT user_id, user_email, user_name, user_contact FROM user WHERE user_id = '$cid'";
                                   $resultE = mysqli_query($conn, $sqlE);
                                   $rowE = mysqli_fetch_assoc($resultE);
-
                             ?>
+                            
                             <form action="function.php" method="POST">
                                 <div class="row">
                                         <input type="hidden" placeholder="Your ID" name="id" autocomplete="off" value="<?php echo $rowE['user_id']; ?>" >
