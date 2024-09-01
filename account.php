@@ -38,6 +38,7 @@
                         <div class="billing-fields">
                             <h3>Account Profile</h3>
 
+                            
                             <?php 
                                   $sqlE = "SELECT user_id, user_email, user_name, user_contact FROM user WHERE user_id = '$cid'";
                                   $resultE = mysqli_query($conn, $sqlE);

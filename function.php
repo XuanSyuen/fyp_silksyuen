@@ -325,6 +325,7 @@
 	  	} 
     }
 
+	
     if(isset($_POST['contact'])){
 
         $name = $_POST['name'];
