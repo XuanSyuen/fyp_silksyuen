@@ -191,7 +191,7 @@
                                             <label for="payment_method_paypal">Touch 'n Go eWallet<i class="twi-cc-mastercard"></i><i class="twi-cc-visa"></i><i class="twi-cc-paypal"></i><i class="twi-cc-discover"></i></label>
                                             <div class="payment_box payment_method_paypal" id="paypal-desc">
                                                 <p>
-                                                Experience hassle-free payments with Touch 'n Go eWallet, enabling quick and contactless transactions via your smartphone. Simply scan, pay, and go, without the need for physical cards or cash.
+                                                Experience hassle-free payments with Touch'n Go eWallet, enabling quick and contactless transactions via your smartphone. Simply scan, pay, and go, without the need for physical cards or cash.
                                                 </p>
                                             </div>
                                         </li>
